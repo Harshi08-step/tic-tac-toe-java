@@ -30,3 +30,5 @@ public class TossExample {
         System.out.println("Game starts with: " + currentPlayer);
     }
 }
+
+
