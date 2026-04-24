@@ -1,20 +1,23 @@
-import java.util.Scanner;
-
 public class TicTacToe {
-
-    static Scanner sc = new Scanner(System.in);
-
-    // Method to get user input
-    public static int getPlayerMove() {
-        System.out.print("Enter slot number (1-9): ");
-        int slot = sc.nextInt();
-        return slot;
-    }
 
     public static void main(String[] args) {
 
-        int move = getPlayerMove();
+        char[][] board = new char[3][3];
 
-        System.out.println("You entered slot: " + move);
+        // Initialize board
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = '-';
+            }
+        }
+
+        // Print board
+        System.out.println("Tic-Tac-Toe Board:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
