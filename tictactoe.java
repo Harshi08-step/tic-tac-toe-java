@@ -1,19 +1,15 @@
-public class TicTacToe {
+// UC5: Validate move
+public static boolean isValidMove(char[][] board, int row, int col) {
 
-    // UC4: Convert slot (1–9) to row and column
-    public static int[] convertSlotToPosition(int slot) {
-        int row = (slot - 1) / 3;
-        int col = (slot - 1) % 3;
-        return new int[]{row, col};
+    // Check boundaries (0–2)
+    if (row < 0 || row > 2 || col < 0 || col > 2) {
+        return false;
     }
 
-    public static void main(String[] args) {
-
-        int slot = 5; // example input
-
-        int[] position = convertSlotToPosition(slot);
-
-        System.out.println("Row: " + position[0]);
-        System.out.println("Column: " + position[1]);
+    // Check if cell is empty
+    if (board[row][col] != '-') {
+        return false;
     }
+
+    return true;
 }
