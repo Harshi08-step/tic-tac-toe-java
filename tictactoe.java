@@ -1,32 +1,20 @@
-import java.util.Random;
+import java.util.Scanner;
 
-public class TossExample {
+public class TicTacToe {
+
+    static Scanner sc = new Scanner(System.in);
+
+    // Method to get user input
+    public static int getPlayerMove() {
+        System.out.print("Enter slot number (1-9): ");
+        int slot = sc.nextInt();
+        return slot;
+    }
 
     public static void main(String[] args) {
 
-        Random rand = new Random();
+        int move = getPlayerMove();
 
-        int toss = rand.nextInt(2); // 0 or 1
-
-        char player1Symbol, player2Symbol;
-        char currentPlayer;
-
-        if (toss == 0) {
-            player1Symbol = 'X';
-            player2Symbol = 'O';
-            currentPlayer = player1Symbol;
-
-            System.out.println("Player 1 starts and is 'X'");
-            System.out.println("Player 2 is 'O'");
-        } else {
-            player1Symbol = 'O';
-            player2Symbol = 'X';
-            currentPlayer = player2Symbol;
-
-            System.out.println("Player 2 starts and is 'X'");
-            System.out.println("Player 1 is 'O'");
-        }
-
-        System.out.println("Game starts with: " + currentPlayer);
+        System.out.println("You entered slot: " + move);
     }
 }
