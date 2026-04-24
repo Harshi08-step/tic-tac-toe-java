@@ -1,33 +1,32 @@
-import java.util.Scanner;
+import java.util.Random;
 
-public class TicTacToe {
+public class TossExample {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        char[][] board = new char[3][3];
+        Random rand = new Random();
 
-        // Initialize board
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                board[i][j] = '-';
-            }
+        int toss = rand.nextInt(2); // 0 or 1
+
+        char player1Symbol, player2Symbol;
+        char currentPlayer;
+
+        if (toss == 0) {
+            player1Symbol = 'X';
+            player2Symbol = 'O';
+            currentPlayer = player1Symbol;
+
+            System.out.println("Player 1 starts and is 'X'");
+            System.out.println("Player 2 is 'O'");
+        } else {
+            player1Symbol = 'O';
+            player2Symbol = 'X';
+            currentPlayer = player2Symbol;
+
+            System.out.println("Player 2 starts and is 'X'");
+            System.out.println("Player 1 is 'O'");
         }
 
-        char currentPlayer = 'X';
-
-        // Game loop (for 9 moves max)
-        for (int turn = 0; turn < 9; turn++) {
-
-            // Print board
-            System.out.println("\nCurrent Board:");
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    System.out.print(board[i][j] + " ");
-                }
-                System.out.println();
-            }
-
-            // Take input
-            System.out.println("Player " + currentPlayer + ", enter row and column (0-2):");
-            int row =
+        System.out.println("Game starts with: " + currentPlayer);
+    }
+}
