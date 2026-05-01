@@ -1,27 +1,13 @@
-public boolean checkWin() {
+// UC10: Check for draw
+public boolean isDraw() {
 
-    // Rows
-    for (int i = 0; i < 9; i += 3) {
-        if (board[i] == board[i + 1] && board[i] == board[i + 2]) {
-            return true;
+    // If any cell is not X or O → moves still possible
+    for (int i = 0; i < 9; i++) {
+        if (board[i] != 'X' && board[i] != 'O') {
+            return false;
         }
     }
 
-    // Columns
-    for (int i = 0; i < 3; i++) {
-        if (board[i] == board[i + 3] && board[i] == board[i + 6]) {
-            return true;
-        }
-    }
-
-    // Diagonals
-    if (board[0] == board[4] && board[0] == board[8]) {
-        return true;
-    }
-
-    if (board[2] == board[4] && board[2] == board[6]) {
-        return true;
-    }
-
-    return false;
+    // No empty cells → draw
+    return true;
 }
